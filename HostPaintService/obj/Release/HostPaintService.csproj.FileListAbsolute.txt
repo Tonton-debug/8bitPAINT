@@ -1,0 +1,15 @@
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\HostPaintService.exe.config
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\HostPaintService.exe.manifest
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\HostPaintService.application
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\HostPaintService.exe
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\HostPaintService.pdb
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\PaintServiceLibrary.dll
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\PaintServiceLibrary.pdb
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\bin\Release\PaintServiceLibrary.dll.config
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.csproj.CoreCompileInputs.cache
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.exe.manifest
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.application
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.csproj.CopyComplete
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.exe
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.pdb
+C:\Users\tatar\source\repos\8bitPaint1D\HostPaintService\obj\Release\HostPaintService.csproj.AssemblyReference.cache

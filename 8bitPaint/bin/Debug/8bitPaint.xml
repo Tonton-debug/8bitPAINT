@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>8bitPaint</name>
+    </assembly>
+    <members>
+        <member name="T:_8bitPaint.BDPicture">
+            <summary>
+            Логика взаимодействия для BDPicture.xaml
+            </summary>
+            <summary>
+            BDPicture
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.BDPicture.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.Everyone">
+            <summary>
+            Логика взаимодействия для Everyone.xaml
+            </summary>
+            <summary>
+            Everyone
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.Everyone.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.MyCell">
+            <summary>
+            Логика взаимодействия для MyCell.xaml
+            </summary>
+            <summary>
+            MyCell
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.MyCell.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.MyPalytre">
+            <summary>
+            Логика взаимодействия для MyPalytre.xaml
+            </summary>
+            <summary>
+            MyPalytre
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.MyPalytre.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.SelectedSize">
+            <summary>
+            Логика взаимодействия для SelectedSize.xaml
+            </summary>
+            <summary>
+            SelectedSize
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.SelectedSize.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.SettingsDialog">
+            <summary>
+            Логика взаимодействия для SettingsDialog.xaml
+            </summary>
+            <summary>
+            SettingsDialog
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.SettingsDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.App">
+            <summary>
+            Логика взаимодействия для App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.MainWindow">
+            <summary>
+            Логика взаимодействия для MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:_8bitPaint.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:_8bitPaint.Properties.Resources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:_8bitPaint.Properties.Resources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:_8bitPaint.Properties.Resources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

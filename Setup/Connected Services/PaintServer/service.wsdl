@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PaintService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPaintService_ReturnPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnPath" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_ReturnPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_GetAllCountPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountPicture" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_GetAllCountPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_Download8BP_InputMessage">
+    <wsdl:part name="parameters" element="tns:Download8BP" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_Download8BP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Download8BPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_GetPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPicture" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_GetPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_WritePicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:WritePicture" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_WritePicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WritePictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_HasFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasFile" />
+  </wsdl:message>
+  <wsdl:message name="IPaintService_HasFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPaintService">
+    <wsdl:operation name="ReturnPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/ReturnPath" message="tns:IPaintService_ReturnPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/ReturnPathResponse" message="tns:IPaintService_ReturnPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/GetAllCountPicture" message="tns:IPaintService_GetAllCountPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/GetAllCountPictureResponse" message="tns:IPaintService_GetAllCountPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Download8BP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/Download8BP" message="tns:IPaintService_Download8BP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/Download8BPResponse" message="tns:IPaintService_Download8BP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/GetPicture" message="tns:IPaintService_GetPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/GetPictureResponse" message="tns:IPaintService_GetPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/GetAllCategories" message="tns:IPaintService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/GetAllCategoriesResponse" message="tns:IPaintService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WritePicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/WritePicture" message="tns:IPaintService_WritePicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/WritePictureResponse" message="tns:IPaintService_WritePicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPaintService/HasFile" message="tns:IPaintService_HasFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPaintService/HasFileResponse" message="tns:IPaintService_HasFile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPaintService" type="tns:IPaintService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnPath">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/ReturnPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountPicture">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/GetAllCountPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download8BP">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/Download8BP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPicture">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/GetPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WritePicture">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/WritePicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasFile">
+      <soap:operation soapAction="http://tempuri.org/IPaintService/HasFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaintService">
+    <wsdl:port name="BasicHttpBinding_IPaintService" binding="tns:BasicHttpBinding_IPaintService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServiceLibrary1/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="_8bitPaint.SelectedSize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_8bitPaint"
+        mc:Ignorable="d"
+        Title="Размер" Height="104.372" Width="200">
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Grid.RowSpan="2">
+                <TextBlock Text="Ширина:"/>
+                <TextBox x:Name="xPixels" Text="8"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <TextBlock Text="Высота:"/>
+                <TextBox x:Name="yPixels" Text="8"/>
+            </StackPanel>
+
+
+        </Grid>
+        <Canvas Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <TextBlock Text="Название файла:"/>
+                <TextBox x:Name="FileName"/>
+            </StackPanel>
+
+            <WrapPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Height="19" Canvas.Left="95">
+                <Button  IsDefault="True" MinWidth="40"  Margin="0,0,10,0" Content="OK" Click="Okey_Button_Click"/>
+                <Button  IsCancel="True" MinWidth="40" Margin="0,0,10,0" Content="Отмена" Click="Close_Button_Click"/>
+
+            </WrapPanel>
+            <Button  IsDefault="True" MinWidth="40" FontSize="8" Content="Рандомное название" Click="RandomName_Button_Click" Canvas.Left="95" Canvas.Top="19" Width="96"/>
+        </Canvas>
+    </StackPanel>
+
+</Window>

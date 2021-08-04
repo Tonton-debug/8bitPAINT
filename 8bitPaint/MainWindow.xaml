@@ -1,0 +1,292 @@
+﻿<Window x:Class="_8bitPaint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_8bitPaint"
+     
+        mc:Ignorable="d"
+        Title="MainWindow" x:Name="myWindow" Height="720" Width="1280" Loaded="Window_Loaded" Closing="Window_Closing" 
+        KeyDown="Window_KeyDown" KeyUp="Window_KeyUp" PreviewKeyDown="Window_PreviewKeyDown" GotKeyboardFocus="myWindow_GotKeyboardFocus" SizeChanged="myWindow_SizeChanged" WindowState="Maximized">
+
+
+    <Grid x:Name="Texts">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu   Grid.Row="0" >
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать файл" Click="CreateNewFile"/>
+                <MenuItem Header="Сохранить файл" Click="SaveFile" />
+                <MenuItem Header="Отрыть файл" Click="OpenFile"/>
+                
+            </MenuItem>
+            <MenuItem Header="Настройки" Click="OpenSettings"/>
+
+        </Menu>
+        <TabControl Grid.Row="1" x:Name="CentralTabContol">
+            <TabItem Header="Холст">
+
+
+                <Grid>
+                   
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width="845*"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel x:Name="LeftStackPanel" Grid.Column="0"  >
+
+
+
+
+                            <StackPanel>
+                                <ScrollViewer Name="WrapPanelLayers" HorizontalContentAlignment="Center" Height="112">
+                                    <WrapPanel x:Name="LayerWrapPanel" Orientation="Vertical" HorizontalAlignment="Center">
+
+                                    </WrapPanel>
+                                </ScrollViewer>
+                                <Button x:Name="AddLayer_Button" Content="Добавить слой"  Click="Click_AddLayer_Button" Width="291" Height="61"/>
+                                <TabControl  x:Name="OptionLayer" Height="71" >
+                                    <TabItem  Header="Настройки">
+                                        <StackPanel x:Name="LocalLayerOptions">
+                                            <StackPanel Orientation="Horizontal" Height="34">
+                                                <Button x:Name="DeleteLayer_Button" Content="Удалить слой" Click="DeleteLayerClick" Tag="layer" />
+                                                <Button x:Name="MoveLayerlicked_Button" Content="Поменять местами" Click="MoveLayerClicked_Click" Tag="layer" />
+                                                <Button x:Name="СoppyLayerClicked_Button" Content="Копировать слой" Click="СoppyLayerClicked_Click" Tag="layer"/>
+                                                <Button x:Name="UniteLayerClicked_Button" Content="Объединить слой" Click="UniteLayerClicked_Click" Tag="layer"/>
+                                            </StackPanel>
+
+                                        </StackPanel>
+                                    </TabItem>
+                                    <TabItem Header="Общие настройки">
+                                        <StackPanel x:Name="GlobalLayerptions" Orientation="Vertical">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Прозрачность:"/>
+                                                <ScrollBar x:Name="OpastyLayerScrollBar" Maximum="1" Minimum="0" Value="0" Orientation="Horizontal" Width="286" Scroll="OpacityLayersScrollBar_Scroll"/>
+                                                <TextBlock Text="{Binding Value, ElementName=OpastyLayerScrollBar}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Активный только выбранный слой:"/>
+                                                <CheckBox IsChecked="False" Click="CheckBox_Click" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </TabItem>
+                                </TabControl>
+
+                            </StackPanel>
+                            <local:MyPalytre x:Name="Palytre1" Height="324"/>
+                        </StackPanel>
+
+                    </Border>
+                    <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1">
+                        <StackPanel x:Name="RightStackPanel" Grid.Column="2" >
+                            <StackPanel>
+                                <ScrollViewer Name="WrapPanelFrames" HorizontalContentAlignment="Center" Grid.Row="1" Height="384">
+                                    <WrapPanel x:Name="FramesWrapPanel" Orientation="Vertical" HorizontalAlignment="Center">
+
+                                    </WrapPanel>
+                                </ScrollViewer>
+                                <Button Content="Добавить кадр" Height="50" Click="Click_AddFrame_Button" HorizontalAlignment="Center" Width="278" Margin="10,0"/>
+                                <Button Content="Старт" Height="50" Name="StartBtn" Click="StartAnim" VerticalAlignment="Top" HorizontalAlignment="Right" Width="128" Margin="0,8,32,0"/>
+                                <TextBlock Text = "Перейти к кадру:" Margin="134,8,67,0" Height="20"/>
+                                <TextBox x:Name="GotoText" Margin="432,-20,-134,8" Height="20"/>
+                                <Button Content="\/" Height="20" Click="GoToFrame" VerticalAlignment="Top"  HorizontalAlignment="Right" Width="20" Margin="0,-28,8,0"/>
+                                <TextBox Name="FPS" Margin="125,-4,46,8" Height="20"  KeyUp="pencil_KeyUp" />
+                                <TextBlock Text = "fps" Margin="254,-28,23,8" Height="20"/>
+                                <Image Margin="22,-112, 0,8" x:Name="Animation" Width="103" Height="103" Stretch="Uniform" RenderOptions.EdgeMode="Aliased"  RenderOptions.BitmapScalingMode="NearestNeighbor" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                            <TabControl  x:Name="OptionFrames" Height="74">
+                                <TabItem  Header="Настройки">
+                                    <StackPanel x:Name="LocalFrameOptions">
+                                        <StackPanel Orientation="Horizontal" Height="34">
+                                            <Button x:Name="DeleteFrame_Button" Content="Удалить кадр" Tag="frame" Click="DeleteLayerClick" Width="76" />
+                                            <Button x:Name="MoveFrameClicked_Button" Content="Поменять местами"  Tag="frame" Click="MoveLayerClicked_Click" Width="114" />
+                                            <Button x:Name="СoppyFrameClicked_Button" Content="Копировать кадр"  Tag="frame" Click="СoppyLayerClicked_Click" Width="102"/>
+                                        </StackPanel>
+
+                                    </StackPanel>
+                                </TabItem>
+                                <TabItem Header="Общие настройки">
+                                    <StackPanel x:Name="GlobalFrameOptions" Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Прозрачность:"/>
+                                            <ScrollBar x:Name="OpastyFrameScrollBar" Maximum="1" Minimum="0" Value="0" Orientation="Horizontal" Width="185" Scroll=" OpacityFrameScrollBar_Scroll" Height="13"/>
+                                            <TextBlock Text="{Binding Value, ElementName=OpastyLayerScrollBar}"/>
+                                        </StackPanel>
+                                        
+                                    </StackPanel>
+                                </TabItem>
+                            </TabControl>
+                        </StackPanel>
+                    </Border>
+
+
+
+                    <StackPanel Grid.Column="1" x:Name="CenterStackPanel" Orientation="Vertical" >
+                        <StackPanel    Height="150">
+                            <Border  BorderBrush="Black" BorderThickness="1" Height="150" Margin="-1,0,0,0">
+
+                                <StackPanel x:Name="InstrumentsStackPanel" Orientation="Vertical"  Margin="0,-1,-1,1">
+                                    <StackPanel Orientation="Horizontal" Height="62">
+                                        <Image Source="pencil.png" x:Name="pencil" MouseLeftButtonDown="ClickInstruments" Tag="0"/>
+                                        <Image Source="eraser.png" x:Name="erarce" MouseLeftButtonDown="ClickInstruments" Tag="1"/>
+                                        <Image Source="color_fill.png" x:Name="fill" MouseLeftButtonDown="ClickInstruments" Tag="2"/>
+                                        <Image Source="hand.png" MouseLeftButtonDown="ClickInstruments" Tag="3" x:Name="hand"/>
+                                        <Image Source="pipetka.png" MouseLeftButtonDown="ClickInstruments" Tag="4" x:Name="dropper"/>
+                                        <Image Source="selected.png"  MouseLeftButtonDown="ClickInstruments" Tag="5" x:Name="selected"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <TextBlock Text="Пиксели:" FontSize="24"/>
+                                        <TextBox x:Name="CountPixels" AcceptsReturn="False" FontSize="24"   Text="1" MinWidth="20" MaxWidth="43" KeyUp="CountPixels_KeyUp"/>
+
+                                    </StackPanel>
+                                    <ScrollBar Orientation="Horizontal" Minimum="1" x:Name="PixelsScrool" HorizontalAlignment="Left" Width="240"  Height="24"  Scroll="PixelsScrool_Scroll"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image x:Name="ReturnPixelsBack" Source="arrow.png" Width="32" Height="32" RenderTransformOrigin="0.5,0.5" MouseDown="BackPixels">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform/>
+                                                    <RotateTransform Angle="180"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                        <Image Source="arrow.png" x:Name="ReturnPixelsUp" Width="32" Height="32" MouseDown="UpPixels"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Border>
+
+
+                        </StackPanel>
+
+
+                        <ScrollViewer Name="WrapPanelBackup" HorizontalContentAlignment="Center" Height="720" Visibility="Visible">
+                            <TreeView x:Name="BackupWrapPanel" Height="100000">
+
+                            </TreeView>
+                        </ScrollViewer>
+                        <ScrollViewer Name="WrapPanelCenterCanvas" Grid.Column="1" Height="720">
+                            <Canvas Name="CenterCanvas"  Visibility="Collapsed"  ClipToBounds="True">
+                                <Canvas  x:Name="DrawCanvasPanel" Width="1206"  MouseWheel="DrawCanvasPanel_MouseWheel"   PreviewMouseDown="DrawCanvasPanel_PreviewMouseDown" PreviewMouseMove="DrawCanvasPanel_PreviewMouseMove" PreviewMouseUp="DrawCanvasPanel_PreviewMouseUp" Height="800" >
+                                <Canvas x:Name="MainDrawCanvas">
+                                <Image Source="fon.png" x:Name="Background" Width="128" Height="64" Stretch="UniformToFill" RenderOptions.EdgeMode="Aliased"  RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+
+                                <Image  x:Name="PrevFrame" Width="128" Height="64" Stretch="UniformToFill" RenderOptions.EdgeMode="Aliased"   RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                         
+                                <Canvas x:Name="MainPanel">
+                             
+                                </Canvas>
+                                    <local:MyCell x:Name="CellBG" Width="8" Height="8" IsHitTestVisible="False"/>
+                                </Canvas>
+                            </Canvas>
+                        </Canvas>
+                        </ScrollViewer>
+                    </StackPanel>
+
+
+
+
+
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="База данных">
+
+                <DockPanel LastChildFill="True">
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel DockPanel.Dock="Left" x:Name="LeftPanelBD" Width="249">
+                            <ScrollViewer x:Name="CategoriesScrollViewer" Height="640">
+                                <WrapPanel Height="10000000">
+                                    <StackPanel x:Name="CategoriesWrapPanel"  Width="232">
+
+                                    </StackPanel>
+                                </WrapPanel>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="Black" DockPanel.Dock="Top" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                           
+                        
+                        <StackPanel Name="ConnectionAndPublishPanel" Grid.Column="0">
+                            
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Название файла:"/>
+                                <TextBox Name="TextBoxFileNamePublish" Width="62"/>
+                                <TextBlock Text=".hru"/>
+                              
+                               
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Автор:"/>
+                                <TextBox Name="TextBoxAuthor" Width="62"/>
+                            </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Описание:"/>
+                                    <TextBox Name="TextBoxDescription" TextWrapping="Wrap" Width="452" Height="40" FontSize="10"/>
+                                </StackPanel>
+                                <Button Content="Опубликовать файл" Width="120" HorizontalAlignment="Left" Click="PublishFile_Button_Click"/>
+                                <StackPanel Orientation="Horizontal" x:Name="StakPanelUpdateFile">
+                                    <Button x:Name="ButtonUpdateFile" Content="Обновить файл" Width="120" HorizontalAlignment="Left" Click="ButtonUpdateFile_Click"/>
+                                    <CheckBox  x:Name="UpdateAllCheckBox" Content="Обновить только информацию о фалйе" IsChecked="False" Click="UpdateAllCheckBox_Click"/>
+                                </StackPanel>
+                                <TextBlock x:Name="UpdateFileInfo" Text="Если вы хотите обновить текущий файл,то у вас должна быть открыт файл для данного файла"/>
+                                <Button x:Name="ButtonDeleteFile" Content="Удалить файл" Width="120" HorizontalAlignment="Left" Click="ButtonDeleteFile_Click"/>
+                           
+                           
+                           
+                        </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Ваш айди:" VerticalAlignment="Center"/>
+                                    <TextBlock Text="none" x:Name="TextBlockMyID" FontSize="8" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="TextBoxMyID" MinWidth="300" MaxWidth="300"/>
+                                    <Button x:Name="ButtonJoinThisID" Content="Войти под данным айди" Click="ButtonJoinThisID_Click"/>
+                                </StackPanel>
+                                <Button x:Name="ButtonCreateID" Content="Сгенерировать новый айди для входа" Click="ButtonCreateID_Click"/>
+                                <TextBlock Text="Выбрать файл:"/>
+                                <ComboBox x:Name="FilesComboBox" SelectedIndex="0" Initialized="FilesComboBox_Initialized">
+                                  
+                                </ComboBox>
+                                <Button x:Name="GetFilesButton" Content="Получить мои файлы в данном каталоге" Click="GetFilesButton_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <StackPanel x:Name="CenterPanelBD" DockPanel.Dock="Bottom">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Строка подключения:"/>
+                            <TextBox x:Name="Addres" Text="http://185.177.218.45:8733/service" MinWidth="150" MaxWidth="250"/>
+                            <Button x:Name="ConnectButton" Content="Подключиться" Click="ConnectButton_Click"/>
+                        </StackPanel>
+                        <TextBox TextWrapping="Wrap" x:Name="StateConnection"  FontSize="12" Height="51"/>
+                        <ProgressBar x:Name="ProgressBarLoadBD" Height="10"/>
+                        <ScrollViewer x:Name="AllPictureinBD" Height="464">
+                            <WrapPanel x:Name="WrapPanelPuctiresList" Height="100000">
+                              
+                            </WrapPanel>
+                        </ScrollViewer>
+                    </StackPanel>
+
+                </DockPanel>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,26 @@
+<publishData>
+  <publishTarget publishUrl="C:\Users\tatar\Desktop\Debug\">
+    <file relUrl="Web.config" publishTime="06/24/2021 13:30:45" />
+    <file relUrl="bin/PaintServiceLibrary.dll.config" publishTime="06/24/2021 13:30:45" />
+    <file relUrl="bin\Debug/PaintServiceLibrary.dll.config" publishTime="06/24/2021 13:30:45" />
+    <file relUrl="bin/ZKWeb.System.Drawing.dll" publishTime="05/24/2021 20:48:40" />
+    <file relUrl="bin\Debug/ZKWeb.System.Drawing.dll" publishTime="05/24/2021 20:48:40" />
+    <file relUrl="Properties/AssemblyInfo.cs" publishTime="06/21/2021 21:38:35" />
+    <file relUrl="packages.config" publishTime="06/23/2021 09:23:28" />
+    <file relUrl="PaintServiceLibrary.Publish.xml" publishTime="06/24/2021 15:24:22" />
+    <file relUrl="bin\Release/PaintServiceLibrary.dll.config" publishTime="06/24/2021 13:30:45" />
+    <file relUrl="bin\Release/PaintServiceLibrary.dll" publishTime="06/24/2021 15:22:34" />
+    <file relUrl="bin\Debug/PaintServiceLibrary.dll" publishTime="06/24/2021 13:36:51" />
+    <file relUrl="bin/PaintServiceLibrary.pdb" publishTime="06/24/2021 15:22:34" />
+    <file relUrl="bin\Release/PaintServiceLibrary.pdb" publishTime="06/24/2021 15:22:34" />
+    <file relUrl="PaintService.cs" publishTime="06/23/2021 10:27:10" />
+    <file relUrl="PaintServiceLibrary.PaintService.svc" publishTime="06/24/2021 15:24:45" />
+    <file relUrl="PaintServiceLibrary.csproj.user" publishTime="06/24/2021 13:36:48" />
+    <file relUrl="IPaintService.cs" publishTime="06/23/2021 10:05:29" />
+    <file relUrl="app.config" publishTime="06/24/2021 13:30:45" />
+    <file relUrl="bin/PaintServiceLibrary.dll" publishTime="06/24/2021 15:22:34" />
+    <file relUrl="bin\Debug/PaintServiceLibrary.pdb" publishTime="06/24/2021 13:36:51" />
+    <file relUrl="bin\Release/ZKWeb.System.Drawing.dll" publishTime="05/24/2021 20:48:40" />
+    <file relUrl="PaintServiceLibrary.csproj" publishTime="06/23/2021 09:23:29" />
+  </publishTarget>
+</publishData>

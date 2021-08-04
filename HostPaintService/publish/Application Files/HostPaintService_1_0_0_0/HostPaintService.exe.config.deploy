@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+	<system.serviceModel>
+		<behaviors>
+			<serviceBehaviors>
+				<behavior name="NewBehavior0">
+					<serviceDebug includeExceptionDetailInFaults="true" />
+					<serviceMetadata httpGetEnabled="true"  httpsGetEnabled="true" />
+				</behavior>
+			</serviceBehaviors>
+		</behaviors>
+		<services>
+			<service behaviorConfiguration="NewBehavior0" name="PaintServiceLibrary.PaintService">
+				<endpoint address="net.tcp://185.177.218.45/service" binding="netTcpBinding" bindingConfiguration=""
+				  name="netTcpBindingServer" contract="PaintServiceLibrary.IPaintService" />
+				<endpoint address="mex" binding="basicHttpBinding" contract="IMetadataExchange"
+				  name="netTcpBindingMex" />
+				<host>
+					<baseAddresses>
+						<add baseAddress="http://185.177.218.45:8001/service" />
+						<add baseAddress="net.tcp://185.177.218.45:8002/service" />
+					</baseAddresses>
+				</host>
+			</service>
+		</services>
+	</system.serviceModel>
+</configuration>
